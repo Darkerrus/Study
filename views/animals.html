@@ -2,15 +2,15 @@
 
 <main class="px-3">
     {{range .}}
-    <div class="alert alert-danger">
-        <div>
-           <img src="/photos/{{.Img}}" alt="abasfs" height="200px" width="200px">
+        <div data-kind="{{.Kind}}" class="alert alert-danger">
+            <div>
+            <img src="/photos/{{.Img}}" alt="abasfs" height="200px" width="200px">
+            </div>
+            <h2>{{.Name}}</h2>
+            <a href="/animal/{{.Id}}" class="btn btn-danger">Узнать больше</a>
         </div>
-        <h2>{{.Name}}</h2>
-        <a href="/animal/{{.Id}}" class="btn btn-danger">Узнать больше</a>
-
-    </div>
     {{end}}
 </main>
+<script src="/js/main.js"></script>
 
 {{template "partials/footer" .}}
