@@ -1,6 +1,11 @@
 {{template "partials/header" .}}
 
 <main class="px-3">
+    <div id="app" class="filters">
+        <div @click="getDogs" class="dog"><h4>Cобаки</h4></div>
+        <div @click="getDogs" class="cat"><h4>Кошки</h4></div>
+        <div @click="getDogs" class="bird"><h4>Птицы</h4></div>
+    </div>
     {{range .}}
         <div data-kind="{{.Kind}}" class="alert alert-danger">
             <div>
