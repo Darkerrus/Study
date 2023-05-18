@@ -1,50 +1,52 @@
-const { createApp } = Vue;
-createApp({
-  data() {
-    return {
-      data: [],
-      filteredData: [],
-      pNode: {}
-    };
-  },
-  methods: {
-    toDefault() {
-      this.filteredData = []
-      while (this.pNode.hasChildNodes()){
-        this.pNode.removeChild(el.lastChild);
-      }
-    },
-    getAll() {
-      toDefault()
-      this.filteredData = this.data
-    },
-    getDogs() {
-      toDefault()
-      this.data.forEach(el => {
-        if(el.dataset.kind === 'Dog') {
-          this.pNode.appendChild(el)
-        }
-      })
-    },
-    getCats() {
-      toDefault()
-      this.data.forEach(el => {
-        if(el.dataset.kind === 'Cat') {
-          this.pNode.appendChild(el)
-        }
-      })
-    },
-    getBird() {
-      toDefault()
-      this.data.forEach(el => {
-        if(el.dataset.kind === 'Bird') {
-          this.pNode.appendChild(el)
-        }
-      })
+const data = document.querySelectorAll('[data-kind]')
+const pNode = document.getElementById('.animals');
+
+const toDefault = () => {
+  while (pNode.hasChildNodes()){
+    pNode.removeChild(pNode.lastChild);
+  }
+}
+
+// const getAll = () => {
+//   toDefault()
+// }
+
+const getDogs = document.querySelector('#getDogs')
+const getCats = document.querySelector('#getCats')
+const getBirds = document.querySelector('#getBirds')
+
+getDogs.onclick = () => { 
+  toDefault()
+  data.forEach(el => {
+    if(el.dataset.kind === 'Dog') {
+      pNode.appendChild(el)
     }
-  },
-  mounted() {
-    this.data = document.querySelectorAll('[data-kind]')
-    this.pNode = document.getElementById('.animals');
-  },
-}).mount("#app");
+  })
+}
+
+getDogs.onclick = () => { 
+  toDefault()
+  data.forEach(el => {
+    if(el.dataset.kind === 'Dog') {
+      pNode.appendChild(el)
+    }
+  })
+}
+
+getCats.onclick = () => { 
+  toDefault()
+  data.forEach(el => {
+    if(el.dataset.kind === 'Cat') {
+      pNode.appendChild(el)
+    }
+  })
+}
+
+getBirds.onclick = () => { 
+  toDefault()
+  data.forEach(el => {
+    if(el.dataset.kind === 'Bird') {
+      pNode.appendChild(el)
+    }
+  })
+}
