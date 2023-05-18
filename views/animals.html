@@ -8,9 +8,6 @@
         <div @click="getBirds"><h4>Птицы</h4></div>
     </div>
     <div class="animals">
-        <div v-for="(animal, idx) in filteredData" :key="idx" class="animal">
-            {{ animal }}
-        </div>
         {{range .}}
             <div data-kind="{{.Kind}}" class="alert alert-danger">
                 <div>

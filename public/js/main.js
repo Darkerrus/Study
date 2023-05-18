@@ -22,7 +22,7 @@ createApp({
       toDefault()
       this.data.forEach(el => {
         if(el.dataset.kind === 'Dog') {
-          this.filteredData.push(el)
+          this.pNode.appendChild(el)
         }
       })
     },
@@ -30,7 +30,7 @@ createApp({
       toDefault()
       this.data.forEach(el => {
         if(el.dataset.kind === 'Cat') {
-          this.filteredData.push(el)
+          this.pNode.appendChild(el)
         }
       })
     },
@@ -38,7 +38,7 @@ createApp({
       toDefault()
       this.data.forEach(el => {
         if(el.dataset.kind === 'Bird') {
-          this.filteredData.push(el)
+          this.pNode.appendChild(el)
         }
       })
     }
