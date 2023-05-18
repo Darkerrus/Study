@@ -1,0 +1,19 @@
+{{template "partials/header" .}}
+
+<main class="px-3">
+    <br>
+    {{if .Title}}
+    <p>{{.Title}}</p><br>
+    {{end}}
+       <h2 class="cover-heading">Форма добавления животного</h1>
+       <form action="/save_article" method="post" enctype="multipart/form-data">
+        <textarea name="name" id="name" class="form-control" placeholder="Введите имя животного"></textarea><br>
+        <textarea name="age" id="age" class="form-control" placeholder="Введите возраст"></textarea><br>
+        <textarea name="description" id="description" class="form-control" placeholder="Введите описание"></textarea><br>
+        <textarea name="kind" id="kind" class="form-control" placeholder="Введите вид"></textarea><br>
+        <input type="file" name="photo" id="photo"><br><br>
+        <button class="btn btn-warning">Добавить</button>
+       </form>
+</main>
+
+{{template "partials/footer" .}}

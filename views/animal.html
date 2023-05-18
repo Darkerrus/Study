@@ -1,0 +1,16 @@
+{{template "partials/header" .}}
+
+<main class="px-3">
+    
+    <div class="alert alert-danger">
+        <div>
+           <img src="/photos/{{.Img}}" alt="abasfs" height="400px" width="400px">
+        </div>
+        <h2>{{.Name}}</h2>
+        <h3>{{.Age}}</h3>
+        <h3>{{.Kind}}</h3>
+        <p>{{.Description}}</p>
+    </div>
+</main>
+
+{{template "partials/footer" .}}
